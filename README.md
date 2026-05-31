@@ -21,11 +21,11 @@ Privileged Gateway Intents は有効化しません。
 
 | 変数 | 必須 | 説明 |
 | --- | --- | --- |
-| `DISCORD_BOT_TOKEN` | Yes | Discord Bot token |
-| `OPS_LOG_HUB_URL` | No | ops-log-hub ingest URL |
-| `OPS_LOG_HUB_KEY` | No | ops-log-hub ingest key |
-| `OPS_LOG_PROJECT` | No | 既定値: `discordbot-coin-flip` |
-| `OPS_LOG_ENVIRONMENT` | No | 既定値: `production` |
+| `DISCORD_BOT_TOKEN` | はい | Discord Bot token |
+| `OPS_LOG_HUB_URL` | いいえ | ops-log-hub 送信先 URL |
+| `OPS_LOG_HUB_KEY` | いいえ | ops-log-hub 送信用 key |
+| `OPS_LOG_PROJECT` | いいえ | 既定値: `discordbot-coin-flip` |
+| `OPS_LOG_ENVIRONMENT` | いいえ | 既定値: `production` |
 
 ## ローカル実行
 

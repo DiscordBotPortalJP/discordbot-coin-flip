@@ -1,33 +1,29 @@
-# Repository Guidelines
+# リポジトリ作業ガイド
 
-## Project Scope
+## 対象範囲
 
-This repository is a single-function Japanese Discord Bot. Keep the bot focused on
-coin flips only. Do not add unrelated games, dice, random choice, moderation, or
-message automation features here; create or use another bot repository instead.
+このリポジトリは、日本語で動く単機能 Discord Bot です。機能はコイン投げに限定します。
+関係のないゲーム、ダイス、ランダム選択、モデレーション、メッセージ自動化は追加せず、別の Bot リポジトリを作成または利用してください。
 
-## UX Rules
+## ユーザー体験のルール
 
-- User-facing Discord messages must be Japanese.
-- Prefer slash commands over message listeners.
-- Do not require Message Content Intent.
-- Keep permissions and setup steps minimal.
+- Discord 上でユーザーに見えるメッセージは日本語にする。
+- message listener より slash command を優先する。
+- Message Content Intent を要求しない。
+- 権限とセットアップ手順は最小限にする。
 
-## Engineering Rules
+## 実装ルール
 
-- Use minimal Discord intents. This bot should only require `guilds`.
-- Never log or print secrets such as `DISCORD_BOT_TOKEN` or `OPS_LOG_HUB_KEY`.
-- Send ops-log events for startup and exceptions only unless a specific incident
-  review requires more telemetry.
-- Keep Railway deployment files (`Procfile`, `runtime.txt`, `mise.toml`) in sync
-  with the standard DiscordBotPortalJP Python template.
+- Discord intents は最小限にする。この Bot は `guilds` だけを要求する。
+- `DISCORD_BOT_TOKEN` や `OPS_LOG_HUB_KEY` などの secret をログ出力しない。
+- 個別の incident 調査で追加 telemetry が必要な場合を除き、ops-log event は起動と例外に限定する。
+- Railway 用ファイル（`Procfile`、`runtime.txt`、`mise.toml`）は標準の DiscordBotPortalJP Python template と同期する。
 
-## Validation
+## 検証
 
-Before opening a PR, run:
+Pull Request を開く前に実行します。
 
 ```bash
 python -m compileall main.py constants extensions utils
 python -m flake8 main.py constants extensions utils
 ```
-
