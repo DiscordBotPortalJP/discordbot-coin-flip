@@ -17,7 +17,7 @@
 - Discord intents は最小限にする。この Bot は `guilds` だけを要求する。
 - `DISCORD_BOT_TOKEN` や `OPS_LOG_HUB_KEY` などの secret をログ出力しない。
 - 個別の incident 調査で追加 telemetry が必要な場合を除き、ops-log event は起動と例外に限定する。
-- Railway 用ファイル（`Procfile`、`runtime.txt`、`mise.toml`）は標準の DiscordBotPortalJP Python template と同期する。
+- Railway 用ファイル（`Procfile`、`runtime.txt`、`mise.toml`）は標準の DiscordBotJP single-function bot policy と同期する。
 
 ## 検証
 
